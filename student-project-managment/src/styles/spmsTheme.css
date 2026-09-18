@@ -1,0 +1,147 @@
+:root {
+  --spms-primary: #6B5CA5;
+  --spms-primary-dark: #55488c;
+  --spms-secondary: #64748B;
+  --spms-bg: #F1F5F9;
+  --spms-surface: #FFFFFF;
+  --spms-text: #1E293B;
+  --spms-text-muted: #64748B;
+  --spms-border: #E2E8F0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--spms-bg);
+  color: var(--spms-text);
+}
+
+.text-dark { color: var(--spms-text) !important; }
+.text-muted { color: var(--spms-text-muted) !important; }
+.text-primary { color: var(--spms-primary) !important; }
+
+.spms-premium-card {
+  border-radius: 12px;
+  background-color: var(--spms-surface);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border-top: 4px solid var(--spms-primary) !important;
+}
+
+.spms-btn-primary {
+  background-color: var(--spms-primary);
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.spms-btn-primary:hover {
+  background-color: var(--spms-primary-dark);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(107, 92, 165, 0.2);
+}
+
+.spms-btn-secondary {
+  background-color: var(--spms-secondary);
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.spms-btn-secondary:hover {
+  background-color: #475569;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.spms-input {
+  border-radius: 8px;
+  border: 1px solid var(--spms-border);
+  background-color: #F8FAFC;
+  font-size: 0.95rem;
+  padding: 10px 15px;
+  color: var(--spms-text);
+  transition: all 0.2s;
+}
+
+.spms-input::placeholder { color: #94A3B8; }
+
+.spms-input:focus {
+  background-color: var(--spms-surface);
+  border-color: var(--spms-primary);
+  box-shadow: 0 0 0 3px rgba(107, 92, 165, 0.1) !important;
+}
+
+.spms-table th {
+  font-size: 0.75rem;
+  letter-spacing: 0.8px;
+  border-bottom: 2px solid var(--spms-bg);
+  color: var(--spms-text-muted) !important;
+}
+
+.spms-table td {
+  font-size: 0.9rem;
+  padding: 16px 10px;
+  border-bottom: 1px solid var(--spms-bg);
+  vertical-align: middle;
+}
+
+.spms-badge {
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.badge-completed { background-color: rgba(32, 201, 151, 0.1); color: #17a57a; border: 1px solid rgba(32, 201, 151, 0.2); }
+.badge-inprogress { background-color: rgba(107, 92, 165, 0.1); color: #6B5CA5; border: 1px solid rgba(107, 92, 165, 0.2); }
+.badge-pending { background-color: rgba(245, 158, 11, 0.1); color: #D97706; border: 1px solid rgba(245, 158, 11, 0.2); }
+.badge-rejected { background-color: rgba(239, 68, 68, 0.1); color: #EF4444; border: 1px solid rgba(239, 68, 68, 0.2); }
+.badge-admin { background-color: rgba(107, 92, 165, 0.1); color: #6B5CA5; border: 1px solid rgba(107, 92, 165, 0.2); }
+.badge-student { background-color: rgba(32, 201, 151, 0.1); color: #17a57a; border: 1px solid rgba(32, 201, 151, 0.2); }
+.badge-faculty { background-color: rgba(245, 158, 11, 0.1); color: #D97706; border: 1px solid rgba(245, 158, 11, 0.2); }
+
+.search-box .form-control {
+  border-radius: 8px;
+  background-color: var(--spms-surface);
+  font-size: 0.9rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.search-box .form-control:focus {
+  box-shadow: 0 0 0 3px rgba(107, 92, 165, 0.1) !important;
+}
+
+.action-btn {
+  border-radius: 8px;
+  background-color: var(--spms-bg);
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  background-color: #E2E8F0;
+  transform: scale(1.05);
+}
+
+.page-header-title {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--spms-text);
+}
