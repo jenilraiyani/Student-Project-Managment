@@ -23,8 +23,8 @@ const ScoresAndRemarks = () => {
       const headers = { Authorization: `Bearer ${localStorage.getItem('spms_token')}` };
 
       const [taskRes, allocRes] = await Promise.all([
-        fetch('https://localhost:7089/api/Task', { headers }),
-        fetch('https://localhost:7089/api/ProjectAllocation', { headers })
+        fetch('https://student-project-managment.onrender.com/api/Task', { headers }),
+        fetch('https://student-project-managment.onrender.com/api/ProjectAllocation', { headers })
       ]);
 
       if (taskRes.ok && allocRes.ok) {
@@ -124,7 +124,7 @@ const ScoresAndRemarks = () => {
 
     setSaving(true);
     try {
-      const response = await fetch(`https://localhost:7089/api/Task/${currentEval.taskID}`, {
+      const response = await fetch(`https://student-project-managment.onrender.com/api/Task/${currentEval.taskID}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

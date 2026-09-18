@@ -14,7 +14,7 @@ const Profile = () => {
     if (currentUser && currentUser.userId) {
       const fetchProfile = async () => {
         try {
-          const response = await fetch(`https://localhost:7089/api/User/${currentUser.userId}`, {
+          const response = await fetch(`https://student-project-managment.onrender.com/api/User/${currentUser.userId}`, {
             headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}` }
           });
           if (response.ok) {

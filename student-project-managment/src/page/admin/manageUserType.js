@@ -22,7 +22,7 @@ const ManageUserType = () => {
   // --- GET API ---
   const fetchUserTypes = async () => {
     try {
-      const response = await fetch('https://localhost:7089/api/UserType', { headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}`, } });
+      const response = await fetch('https://student-project-managment.onrender.com/api/UserType', { headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}`, } });
       if (response.ok) {
         const jsonResponse = await response.json();
         const dataArray = jsonResponse.data || jsonResponse.Data || (Array.isArray(jsonResponse) ? jsonResponse : []);
@@ -40,7 +40,7 @@ const ManageUserType = () => {
     if (!window.confirm("Are you sure you want to delete this User Type?")) return;
 
     try {
-      const response = await fetch(`https://localhost:7089/api/UserType/${id}`, {
+      const response = await fetch(`https://student-project-managment.onrender.com/api/UserType/${id}`, {
         method: 'DELETE', headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}` }
       });
 
@@ -64,7 +64,7 @@ const ManageUserType = () => {
   // --- PUT API (EDIT) - Submits Data ---
   const submitEdit = async () => {
     try {
-      const response = await fetch(`https://localhost:7089/api/UserType/${editingUserType.userTypeID}`, {
+      const response = await fetch(`https://student-project-managment.onrender.com/api/UserType/${editingUserType.userTypeID}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('spms_token')}`, 'Content-Type': 'application/json'

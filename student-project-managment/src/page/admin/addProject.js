@@ -18,7 +18,7 @@ const AddProject = () => {
 
     try {
       // Post strictly to ProjectMaster API
-      const response = await fetch('https://localhost:7089/api/ProjectMaster', {
+      const response = await fetch('https://student-project-managment.onrender.com/api/ProjectMaster', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('spms_token')}` },
         body: JSON.stringify({

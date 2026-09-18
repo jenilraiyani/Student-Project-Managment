@@ -20,7 +20,7 @@ const ManageStatus = () => {
   // --- GET API ---
   const fetchStatuses = async () => {
     try {
-      const response = await fetch('https://localhost:7089/api/TaskStatus', { headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}`, } });
+      const response = await fetch('https://student-project-managment.onrender.com/api/TaskStatus', { headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}`, } });
       if (response.ok) {
         const jsonResponse = await response.json();
         const dataArray = jsonResponse.data || jsonResponse.Data || (Array.isArray(jsonResponse) ? jsonResponse : []);
@@ -38,7 +38,7 @@ const ManageStatus = () => {
     if (!window.confirm('Are you sure you want to delete this status?')) return;
 
     try {
-      const response = await fetch(`https://localhost:7089/api/TaskStatus/${id}`, {
+      const response = await fetch(`https://student-project-managment.onrender.com/api/TaskStatus/${id}`, {
         method: 'DELETE', headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}` }
       });
 
@@ -61,7 +61,7 @@ const ManageStatus = () => {
   // --- PUT API ---
   const submitEdit = async () => {
     try {
-      const response = await fetch(`https://localhost:7089/api/TaskStatus/${editingStatus.taskStatusID}`, {
+      const response = await fetch(`https://student-project-managment.onrender.com/api/TaskStatus/${editingStatus.taskStatusID}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('spms_token')}`, 'Content-Type': 'application/json'

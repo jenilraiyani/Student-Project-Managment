@@ -61,8 +61,8 @@ const ManageAllocation = () => {
     try {
       const headers = { Authorization: `Bearer ${localStorage.getItem('spms_token')}` };
       const [allocRes, taskRes] = await Promise.all([
-        fetch('https://localhost:7089/api/ProjectAllocation', { headers }),
-        fetch('https://localhost:7089/api/Task', { headers })
+        fetch('https://student-project-managment.onrender.com/api/ProjectAllocation', { headers }),
+        fetch('https://student-project-managment.onrender.com/api/Task', { headers })
       ]);
 
       let tasks = [];
@@ -96,8 +96,8 @@ const ManageAllocation = () => {
     try {
       const headers = { Authorization: `Bearer ${localStorage.getItem('spms_token')}` };
       const [projRes, userRes] = await Promise.all([
-        fetch('https://localhost:7089/api/ProjectMaster/dropdown', { headers }),
-        fetch('https://localhost:7089/api/User', { headers })
+        fetch('https://student-project-managment.onrender.com/api/ProjectMaster/dropdown', { headers }),
+        fetch('https://student-project-managment.onrender.com/api/User', { headers })
       ]);
 
       if (projRes.ok) {
@@ -118,7 +118,7 @@ const ManageAllocation = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this allocation?')) return;
     try {
-      const response = await fetch(`https://localhost:7089/api/ProjectAllocation/${id}`, {
+      const response = await fetch(`https://student-project-managment.onrender.com/api/ProjectAllocation/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${localStorage.getItem('spms_token')}` }
       });
@@ -182,7 +182,7 @@ const ManageAllocation = () => {
 
     setSaving(true);
     try {
-      const response = await fetch(`https://localhost:7089/api/ProjectAllocation/${editingAlloc.projectAllocationID}`, {
+      const response = await fetch(`https://student-project-managment.onrender.com/api/ProjectAllocation/${editingAlloc.projectAllocationID}`, {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('spms_token')}`,

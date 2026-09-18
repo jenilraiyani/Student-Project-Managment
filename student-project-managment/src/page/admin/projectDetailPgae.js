@@ -24,11 +24,11 @@ const ProjectDetails = () => {
     try {
       const [masterRes, allocRes, taskRes, statusRes] = await Promise.all([
         projectIdParam
-          ? fetch(`https://localhost:7089/api/ProjectMaster/${projectIdParam}`, { headers: authHeaders() })
+          ? fetch(`https://student-project-managment.onrender.com/api/ProjectMaster/${projectIdParam}`, { headers: authHeaders() })
           : Promise.resolve(null),
-        fetch('https://localhost:7089/api/ProjectAllocation', { headers: authHeaders() }),
-        fetch('https://localhost:7089/api/Task', { headers: authHeaders() }),
-        fetch('https://localhost:7089/api/TaskStatus', { headers: authHeaders() })
+        fetch('https://student-project-managment.onrender.com/api/ProjectAllocation', { headers: authHeaders() }),
+        fetch('https://student-project-managment.onrender.com/api/Task', { headers: authHeaders() }),
+        fetch('https://student-project-managment.onrender.com/api/TaskStatus', { headers: authHeaders() })
       ]);
 
       let master = null;

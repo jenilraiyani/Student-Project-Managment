@@ -16,7 +16,7 @@ const AddPriority = () => {
     };
 
     try {
-      const response = await fetch('https://localhost:7089/api/TaskPriority', {
+      const response = await fetch('https://student-project-managment.onrender.com/api/TaskPriority', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}`,  'Content-Type': 'application/json'
         },

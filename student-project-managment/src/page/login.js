@@ -27,7 +27,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://localhost:7089/api/User/login', {
+      const response = await fetch('https://student-project-managment.onrender.com/api/User/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -46,7 +46,7 @@ const Login = () => {
 
         if (userId) {
           try {
-            const userRes = await fetch(`https://localhost:7089/api/User/${userId}`, {
+            const userRes = await fetch(`https://student-project-managment.onrender.com/api/User/${userId}`, {
               headers: { 'Authorization': `Bearer ${token}` }
             });
             if (userRes.ok) {

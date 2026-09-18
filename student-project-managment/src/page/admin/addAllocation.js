@@ -28,8 +28,8 @@ const AddAllocation = () => {
     try {
       const headers = { Authorization: `Bearer ${localStorage.getItem('spms_token')}` };
       const [projRes, userRes] = await Promise.all([
-        fetch('https://localhost:7089/api/ProjectMaster/dropdown', { headers }),
-        fetch('https://localhost:7089/api/User', { headers })
+        fetch('https://student-project-managment.onrender.com/api/ProjectMaster/dropdown', { headers }),
+        fetch('https://student-project-managment.onrender.com/api/User', { headers })
       ]);
 
       if (projRes.ok) {
@@ -84,7 +84,7 @@ const AddAllocation = () => {
 
     setSaving(true);
     try {
-      const response = await fetch('https://localhost:7089/api/ProjectAllocation', {
+      const response = await fetch('https://student-project-managment.onrender.com/api/ProjectAllocation', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -23,3 +23,4 @@ ENV ASPNETCORE_URLS=http://+:80
 
 # Start the application
 ENTRYPOINT ["dotnet", "studentProjectManagement.dll"]
+

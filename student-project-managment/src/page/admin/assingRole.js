@@ -15,8 +15,8 @@ const AssignRole = () => {
     const fetchDropdowns = async () => {
       try {
         const [usersRes, rolesRes] = await Promise.all([
-          fetch('https://localhost:7089/api/User/dropdown', { headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}` } }),
-          fetch('https://localhost:7089/api/Role/dropdown', { headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}` } })
+          fetch('https://student-project-managment.onrender.com/api/User/dropdown', { headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}` } }),
+          fetch('https://student-project-managment.onrender.com/api/Role/dropdown', { headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}` } })
         ]);
 
         if (usersRes.ok && rolesRes.ok) {
@@ -65,7 +65,7 @@ const AssignRole = () => {
   const handleSaveAssignment = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://localhost:7089/api/UserRole', {
+      const response = await fetch('https://student-project-managment.onrender.com/api/UserRole', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

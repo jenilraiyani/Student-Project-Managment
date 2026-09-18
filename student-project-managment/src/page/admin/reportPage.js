@@ -20,8 +20,8 @@ const Reports = () => {
       const headers = { Authorization: `Bearer ${localStorage.getItem('spms_token')}` };
 
       const [allocRes, taskRes] = await Promise.all([
-        fetch('https://localhost:7089/api/ProjectAllocation', { headers }),
-        fetch('https://localhost:7089/api/Task', { headers })
+        fetch('https://student-project-managment.onrender.com/api/ProjectAllocation', { headers }),
+        fetch('https://student-project-managment.onrender.com/api/Task', { headers })
       ]);
 
       let allocs = [];

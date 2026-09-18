@@ -66,7 +66,7 @@ export const UserProvider = ({ children }) => {
 
     if (userId) {
       setCurrentUser(prev => ({ ...prev, userId }));
-      fetch(`https://localhost:7089/api/User/${userId}`, {
+      fetch(`https://student-project-managment.onrender.com/api/User/${userId}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(res => (res.ok ? res.json() : null))

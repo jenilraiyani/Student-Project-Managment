@@ -34,9 +34,9 @@ const AddTask = () => {
       const headers = { Authorization: `Bearer ${localStorage.getItem('spms_token')}` };
 
       const [allocRes, prioRes, statRes] = await Promise.all([
-        fetch('https://localhost:7089/api/ProjectAllocation', { headers }),
-        fetch('https://localhost:7089/api/TaskPriority/dropdown', { headers }),
-        fetch('https://localhost:7089/api/TaskStatus/dropdown', { headers })
+        fetch('https://student-project-managment.onrender.com/api/ProjectAllocation', { headers }),
+        fetch('https://student-project-managment.onrender.com/api/TaskPriority/dropdown', { headers }),
+        fetch('https://student-project-managment.onrender.com/api/TaskStatus/dropdown', { headers })
       ]);
 
       if (allocRes.ok) {
@@ -117,7 +117,7 @@ const AddTask = () => {
 
     setSaving(true);
     try {
-      const response = await fetch('https://localhost:7089/api/Task', {
+      const response = await fetch('https://student-project-managment.onrender.com/api/Task', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -152,8 +152,8 @@ const AddTask = () => {
       };
 
       const [taskRes, allocRes] = await Promise.all([
-        fetch('https://localhost:7089/api/Task', { headers }),
-        fetch(`https://localhost:7089/api/ProjectAllocation/${allocationId}`, { headers })
+        fetch('https://student-project-managment.onrender.com/api/Task', { headers }),
+        fetch(`https://student-project-managment.onrender.com/api/ProjectAllocation/${allocationId}`, { headers })
       ]);
 
       if (!taskRes.ok || !allocRes.ok) return;
@@ -169,7 +169,7 @@ const AddTask = () => {
         ? Math.round(tasks.reduce((s, t) => s + (Number(t.progressPercentage) || 0), 0) / tasks.length)
         : 0;
 
-      await fetch(`https://localhost:7089/api/ProjectAllocation/${allocationId}`, {
+      await fetch(`https://student-project-managment.onrender.com/api/ProjectAllocation/${allocationId}`, {
         method: 'PUT',
         headers,
         body: JSON.stringify({

@@ -20,7 +20,7 @@ const ManagePriority = () => {
   // --- GET API ---
   const fetchPriorities = async () => {
     try {
-      const response = await fetch('https://localhost:7089/api/TaskPriority', { headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}`, } });
+      const response = await fetch('https://student-project-managment.onrender.com/api/TaskPriority', { headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}`, } });
       if (response.ok) {
         const jsonResponse = await response.json();
         const dataArray = jsonResponse.data || jsonResponse.Data || (Array.isArray(jsonResponse) ? jsonResponse : []);
@@ -38,7 +38,7 @@ const ManagePriority = () => {
     if (!window.confirm('Are you sure you want to delete this priority?')) return;
 
     try {
-      const response = await fetch(`https://localhost:7089/api/TaskPriority/${id}`, {
+      const response = await fetch(`https://student-project-managment.onrender.com/api/TaskPriority/${id}`, {
         method: 'DELETE', headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}` }
       });
 
@@ -61,7 +61,7 @@ const ManagePriority = () => {
   // --- PUT API ---
   const submitEdit = async () => {
     try {
-      const response = await fetch(`https://localhost:7089/api/TaskPriority/${editingPriority.taskPriorityID}`, {
+      const response = await fetch(`https://student-project-managment.onrender.com/api/TaskPriority/${editingPriority.taskPriorityID}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('spms_token')}`, 'Content-Type': 'application/json'

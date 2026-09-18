@@ -16,7 +16,7 @@ const AddStatus = () => {
     };
 
     try {
-      const response = await fetch('https://localhost:7089/api/TaskStatus', {
+      const response = await fetch('https://student-project-managment.onrender.com/api/TaskStatus', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}`,  'Content-Type': 'application/json'
         },

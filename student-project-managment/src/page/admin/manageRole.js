@@ -22,7 +22,7 @@ const ManageRoles = () => {
   // --- GET API ---
   const fetchRoles = async () => {
     try {
-      const response = await fetch('https://localhost:7089/api/Role', { headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}`, } });
+      const response = await fetch('https://student-project-managment.onrender.com/api/Role', { headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}`, } });
       if (response.ok) {
         const jsonResponse = await response.json();
         const dataArray = jsonResponse.data || jsonResponse.Data || (Array.isArray(jsonResponse) ? jsonResponse : []);
@@ -40,7 +40,7 @@ const ManageRoles = () => {
     if (!window.confirm("Are you sure you want to delete this role?")) return;
 
     try {
-      const response = await fetch(`https://localhost:7089/api/Role/${id}`, {
+      const response = await fetch(`https://student-project-managment.onrender.com/api/Role/${id}`, {
         method: 'DELETE', headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}` }
       });
 
@@ -66,7 +66,7 @@ const ManageRoles = () => {
   // --- PUT API (EDIT) - Submits Data ---
   const submitEdit = async () => {
     try {
-      const response = await fetch(`https://localhost:7089/api/Role/${editingRole.roleID}`, {
+      const response = await fetch(`https://student-project-managment.onrender.com/api/Role/${editingRole.roleID}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('spms_token')}`, 'Content-Type': 'application/json'

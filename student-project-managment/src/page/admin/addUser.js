@@ -15,7 +15,7 @@ const AddUser = () => {
   const [roles, setRoles] = useState([]);
 
   React.useEffect(() => {
-    fetch('https://localhost:7089/api/UserType', { headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}`,  } })
+    fetch('https://student-project-managment.onrender.com/api/UserType', { headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}`,  } })
       .then(res => res.json())
       .then(data => {
         if (data && data.success) {
@@ -41,7 +41,7 @@ const AddUser = () => {
     };
 
     try {
-      const response = await fetch('https://localhost:7089/api/User', {
+      const response = await fetch('https://student-project-managment.onrender.com/api/User', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}`,  'Content-Type': 'application/json' },
         body: JSON.stringify(newUser)

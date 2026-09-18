@@ -31,7 +31,7 @@ const ManageUsers = () => {
   // --- GET API ---
   const fetchUsers = async () => {
     try {
-      const response = await fetch('https://localhost:7089/api/User', { headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}`,  } });
+      const response = await fetch('https://student-project-managment.onrender.com/api/User', { headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}`,  } });
       if (response.ok) {
         const jsonResponse = await response.json();
         setUsers(jsonResponse.data || jsonResponse.Data || (Array.isArray(jsonResponse) ? jsonResponse : []));
@@ -48,7 +48,7 @@ const ManageUsers = () => {
     if (!window.confirm("Are you sure you want to delete this User?")) return;
 
     try {
-      const response = await fetch(`https://localhost:7089/api/User/${id}`, {
+      const response = await fetch(`https://student-project-managment.onrender.com/api/User/${id}`, {
         method: 'DELETE', headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}` }});
 
       if (response.ok) {
@@ -84,7 +84,7 @@ const ManageUsers = () => {
   // --- PUT API (EDIT) - Submits Data ---
   const submitEdit = async () => {
     try {
-      const response = await fetch(`https://localhost:7089/api/User/${editingUser.userID}`, {
+      const response = await fetch(`https://student-project-managment.onrender.com/api/User/${editingUser.userID}`, {
         method: 'PUT',
         headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}`,  'Content-Type': 'application/json'
         },

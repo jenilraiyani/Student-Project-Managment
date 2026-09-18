@@ -27,8 +27,8 @@ const ManageTask = () => {
     try {
       const h = { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}` };
       const [prioRes, statRes] = await Promise.all([
-        fetch('https://localhost:7089/api/TaskPriority/dropdown', { headers: h }),
-        fetch('https://localhost:7089/api/TaskStatus/dropdown', { headers: h })
+        fetch('https://student-project-managment.onrender.com/api/TaskPriority/dropdown', { headers: h }),
+        fetch('https://student-project-managment.onrender.com/api/TaskStatus/dropdown', { headers: h })
       ]);
       if (prioRes.ok) { let j = await prioRes.json(); setPrioritiesList(j.data || j.Data || []); }
       if (statRes.ok) { let j = await statRes.json(); setStatusesList(j.data || j.Data || []); }
@@ -39,8 +39,8 @@ const ManageTask = () => {
     try {
       const headers = { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}` };
       const [taskRes, allocRes] = await Promise.all([
-        fetch('https://localhost:7089/api/Task', { headers }),
-        fetch('https://localhost:7089/api/ProjectAllocation', { headers })
+        fetch('https://student-project-managment.onrender.com/api/Task', { headers }),
+        fetch('https://student-project-managment.onrender.com/api/ProjectAllocation', { headers })
       ]);
 
       if (taskRes.ok) {
@@ -78,7 +78,7 @@ const ManageTask = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this task?")) return;
     try {
-      const response = await fetch(`https://localhost:7089/api/Task/${id}`, {
+      const response = await fetch(`https://student-project-managment.onrender.com/api/Task/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}` }
       });
@@ -94,7 +94,7 @@ const ManageTask = () => {
 
   const handleEditClick = async (task) => {
     try {
-      const response = await fetch(`https://localhost:7089/api/Task/${task.id}`, {
+      const response = await fetch(`https://student-project-managment.onrender.com/api/Task/${task.id}`, {
         headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}` }
       });
       if (response.ok) {
@@ -129,7 +129,7 @@ const ManageTask = () => {
 
   const submitEdit = async () => {
     try {
-      const response = await fetch(`https://localhost:7089/api/Task/${editingTask.id}`, {
+      const response = await fetch(`https://student-project-managment.onrender.com/api/Task/${editingTask.id}`, {
         method: 'PUT',
         headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({

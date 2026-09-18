@@ -15,7 +15,7 @@ const ManageProject = () => {
 
     const fetchProjects = async () => {
         try {
-            const response = await fetch('https://localhost:7089/api/ProjectMaster', {
+            const response = await fetch('https://student-project-managment.onrender.com/api/ProjectMaster', {
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}` }
             });
             if (response.ok) {
@@ -45,7 +45,7 @@ const ManageProject = () => {
     const handleDelete = async (id) => {
         if (!window.confirm("Are you sure you want to delete this project?")) return;
         try {
-            const response = await fetch(`https://localhost:7089/api/ProjectMaster/${id}`, {
+            const response = await fetch(`https://student-project-managment.onrender.com/api/ProjectMaster/${id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}` }
             });
@@ -66,7 +66,7 @@ const ManageProject = () => {
 
     const submitEdit = async () => {
         try {
-            const response = await fetch(`https://localhost:7089/api/ProjectMaster/${editingProject.id}`, {
+            const response = await fetch(`https://student-project-managment.onrender.com/api/ProjectMaster/${editingProject.id}`, {
                 method: 'PUT',
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('spms_token')}`, 'Content-Type': 'application/json' },
                 body: JSON.stringify({

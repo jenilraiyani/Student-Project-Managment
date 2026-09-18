@@ -32,7 +32,7 @@ const TaskDetails = () => {
   const fetchTaskDetail = async () => {
     setLoading(true);
     try {
-      const taskRes = await fetch(`https://localhost:7089/api/Task/${taskId}`, {
+      const taskRes = await fetch(`https://student-project-managment.onrender.com/api/Task/${taskId}`, {
         headers: authHeaders()
       });
 
@@ -46,7 +46,7 @@ const TaskDetails = () => {
       setTask(t);
 
       if (t?.projectAllocationID) {
-        const allocRes = await fetch(`https://localhost:7089/api/ProjectAllocation/${t.projectAllocationID}`, {
+        const allocRes = await fetch(`https://student-project-managment.onrender.com/api/ProjectAllocation/${t.projectAllocationID}`, {
           headers: authHeaders()
         });
         if (allocRes.ok) {
